@@ -1,24 +1,17 @@
 import React from "react";
-import "../style.css";
 import { Link } from "react-router-dom";
 
-export default function Forgotpassword() {
+export default function Registration() {
   return (
     <div className="container">
-      <div className="forgotPassword form">
-        <header>Reset Password</header>
+      <div className="registration form">
+        <header>Signup</header>
         <form action="#">
           <input type="text" placeholder="Enter your email" />
-          <input type="button" className="button" value="Send Login Link" />
+          <input type="password" placeholder="Create a password" />
+          <input type="password" placeholder="Confirm your password" />
+          <input type="button" className="button" value="Signup" />
         </form>
-
-        <div className="signup">
-          <span className="signup">
-            Don't have an account?
-            <Link to="/register">Signup</Link>
-          </span>
-        </div>
-
         <div className="signup">
           <span className="signup">
             Already have an account?
