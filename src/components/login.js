@@ -1,8 +1,9 @@
 import React from "react";
-import "../style.css";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function Login() {
+  const dispatch = useDispatch();
   return (
     <div className="container">
       <div className="login form">
@@ -11,7 +12,20 @@ export default function Login() {
           <input type="text" placeholder="Enter your email" />
           <input type="password" placeholder="Enter your password" />
           <Link to="/forgot-password">Forgot password?</Link>
-          <input type="button" className="button" value="Login" />
+          <input
+            type="button"
+            onClick={() => {
+              localStorage.setItem("token", "true");
+              dispatch({
+                type: "login",
+                payload: {
+                  isLoggedIn: true,
+                },
+              });
+            }}
+            className="button"
+            value="Login"
+          />
         </form>
         <div className="signup">
           <span className="signup">
